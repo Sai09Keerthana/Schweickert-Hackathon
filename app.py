@@ -1,3 +1,4 @@
+#Type username = username, password = password to see the message - You are logged in
 from flask import Flask, request, make_response
 from functools import wraps 
 
@@ -33,3 +34,5 @@ def other_page():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    
