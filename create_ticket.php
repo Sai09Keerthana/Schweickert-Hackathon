@@ -2,7 +2,7 @@
 
 /*
 
-Ticket Creation Demo.
+Create Ticket wrapper.
 
 Copyright (C) 2021 Hack Rhein-Neckar - Schweickert Team 2
 
@@ -70,9 +70,3 @@ function create_ticket( $url, $login, $password, $user_firstname, $user_lastname
         echo $response;
     }
 }
-
-$url        = "https://team2-hackdays.itomig.de/webservices/rest.php?version=1.3";
-$login      = 'admin-team2';
-$password   = 'fie5aBo9oe4eij1faexu';
-
-create_ticket( $url, $login, $password, "claude", "monet", "Demo", "Cannot submit ticket", "Dear Support, can you please help? I cannot submit a ticket" );
