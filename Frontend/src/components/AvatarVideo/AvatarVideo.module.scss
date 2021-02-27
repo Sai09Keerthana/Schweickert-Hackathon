@@ -1,0 +1,34 @@
+.overallWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.avatarVideo {
+  margin-left: -125px;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: -125px;
+    height: calc(100vh);
+    width: calc(100vh + 100vw + 125px);
+    margin-left: -67vw;
+  }
+}
+
+.overlayImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 99;
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+
+  img {
+    width: 100%;
+    margin-top: 150px;
+  }
+}
