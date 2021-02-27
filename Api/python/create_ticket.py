@@ -33,6 +33,7 @@ COMMENT = 'Created from Python'
 organization = "Demo"
 user_lastname = "monet"
 user_firstname = "claude"
+urgency = 1
 
 json_data = {
         'operation': 'core/create',
@@ -45,6 +46,7 @@ json_data = {
 #                    'name' : user_lastname,
 #                    'first_name' : user_firstname,
 #                }],
+                'urgency': urgency,
         },
         'comment': COMMENT,
         'output_fields': 'id',
