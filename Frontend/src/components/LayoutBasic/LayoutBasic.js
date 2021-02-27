@@ -27,13 +27,13 @@ const LayoutBasic = ({ children }) => {
       {/* <HorizontalSpacing /> */}
       {/* <Container> */}
       <div className={styles.deviceWrapper}>
-        <HorizontalSpacing variant="large" />
         <div className={styles.deviceWrapperInner}>
-          <DeviceEmulator type="mobile">
-            <Card variant="outlined">
-              <div className={styles.frame}>{children}</div>
-            </Card>
-          </DeviceEmulator>
+          <HorizontalSpacing variant="large" />
+          {/* <DeviceEmulator type="tab"> */}
+          <Card variant="outlined">
+            <div className={styles.frame}>{children}</div>
+          </Card>
+          {/* </DeviceEmulator> */}
         </div>
       </div>
       {/* </Container> */}

@@ -5,9 +5,15 @@
 
 .deviceWrapper {
   text-align: center;
+  overflow: hidden;
 }
 
 .deviceWrapperInner {
-  width: 300px;
+  max-width: 375px;
+  max-height: 667px;
+  min-width: 375px;
+  min-height: 667px;
   margin: 0 auto;
+  overflow: hidden;
+  border: solid 1px;
 }

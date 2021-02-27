@@ -4,16 +4,13 @@
 }
 
 .avatarVideo {
-  margin-left: -125px;
   overflow: hidden;
 
   iframe {
     position: absolute;
     top: 0;
-    left: -125px;
+    left: 0;
     height: calc(100vh);
-    width: calc(100vh + 100vw + 125px);
-    margin-left: -67vw;
   }
 }
 

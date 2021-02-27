@@ -1,10 +1,13 @@
-import React, { useState } from "react";
-import ReactPlayer from "react-player";
+import React, { useEffect, useState } from "react";
 import { disableBodyScroll } from "body-scroll-lock";
 
 import styles from "./AvatarVideo.module.scss";
+import ReactPlayer from "react-player";
 
 const AvatarVideo = ({ src, onEnded }) => {
+  if (!src.includes("embed")) {
+    src = src.replace("www.youtube.com", "www.youtube.com/embed");
+  }
   src = src.replace("www.youtube.com", "www.youtube-nocookie.com");
   src = `${src}?autoplay=1&showinfo=0&controls=0`;
 
@@ -21,14 +24,6 @@ const AvatarVideo = ({ src, onEnded }) => {
 
   return (
     <span className={styles.overallWrapper} id="unscrollableVideo">
-      {!playWasClicked && (
-        <div className={styles.overlayImage} onClick={playVideo}>
-          <img
-            src="http://s3.amazonaws.com/content.newsok.com/newsok/images/mobile/play_button.png"
-            id="cover"
-          />
-        </div>
-      )}
       <div className={styles.avatarVideo}>
         <ReactPlayer
           url={src}
@@ -36,9 +31,12 @@ const AvatarVideo = ({ src, onEnded }) => {
           playsinline={true}
           controls={false}
           onEnded={onEnded}
+          onReady={() => {
+            playVideo();
+          }}
           config={{
             youtube: {
-              playerVars: { showinfo: 1 },
+              playerVars: { showinfo: 1, autoplay: 1, showinfo: 0, start: 0.1 },
             },
           }}
         />

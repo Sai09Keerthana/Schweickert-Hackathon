@@ -33,7 +33,7 @@ const Routes = () => {
         </Route>
         <Route path="/speak-ticket">
           <SpeakTicket />
-          <NextButton to={"/transcription"} label={"Next"} />
+          {/* <NextButton to={"/transcription"} label={"Next"} /> */}
         </Route>
         <Route path="/transcription">
           <Transcription />
