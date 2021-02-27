@@ -357,8 +357,8 @@ else
 }
 
 $aData = array();
-$aData['auth_user'] = 'rest';
-$aData['auth_pwd'] = 'rest';
+$aData['auth_user'] = 'admin-team2';
+$aData['auth_pwd'] = 'fie5aBo9oe4eij1faexu';
 
 
 foreach ($aOperations as $iOp => $aOperation)
