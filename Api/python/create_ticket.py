@@ -26,22 +26,17 @@ import sys
 ITOP_URL        = "https://team2-hackdays.itomig.de"
 ITOP_USER       = 'admin-team2'
 ITOP_PWD        = 'fie5aBo9oe4eij1faexu'
-TICKET_CLASS = 'UserRequest'
-TITLE = 'Service down'
-DESCRIPTION = 'BODY'
-COMMENT = 'Created from Python'
+TICKET_CLASS    = 'UserRequest'
+COMMENT         = 'Created from Python'
 
-organization = "Demo"
-user_lastname = "monet"
-user_firstname = "claude"
-urgency = 1
+def create_ticket( url, login, password, user_firstname, user_lastname, organization, urgency, subject, body ):
 
-json_data = {
+    json_data = {
         'operation': 'core/create',
         'class': TICKET_CLASS,
         'fields': {
-                'title': TITLE,
-                'description': DESCRIPTION,
+                'title': subject,
+                'description': body,
                 'org_id': 'SELECT Organization WHERE name = "%(organization)s"' % { 'organization': organization },
                 'caller_id' : {
                     'name' : user_lastname,
@@ -52,10 +47,11 @@ json_data = {
         'comment': COMMENT,
         'output_fields': 'id, friendlyname',
 }
-encoded_data = json.dumps(json_data)
-r = requests.post(ITOP_URL+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': ITOP_USER , 'auth_pwd': ITOP_PWD , 'json_data': encoded_data})
-result = json.loads(r.text);
-if result['code'] == 0:
+    encoded_data = json.dumps(json_data)
+    r = requests.post(ITOP_URL+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': ITOP_USER , 'auth_pwd': ITOP_PWD , 'json_data': encoded_data})
+    result = json.loads(r.text);
+
+    if result['code'] == 0:
         # pprint( result['objects'] ) # DEBUG
         objects = result['objects']
         first_key = next(iter( objects ))  # outputs 'foo'
@@ -65,5 +61,12 @@ if result['code'] == 0:
         tick_id = fields['id']
         tick_friendly_id = fields['friendlyname']
         print( "Ticket created - %(friendly)s (%(id)s).\n" % { 'id' : tick_id, 'friendly' : tick_friendly_id  } )
-else:
+    else:
         print( result['message']+"\n" )
+
+organization = "Demo"
+user_lastname = "monet"
+user_firstname = "claude"
+urgency = 1
+
+create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, user_firstname, user_lastname, organization, urgency, "something wrong", "please help from Python" )
