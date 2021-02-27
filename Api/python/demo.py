@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Create Ticket wrapper.
+# Create Ticket Demo.
 #
 # Copyright (C) 2021 Hack Rhein-Neckar - Schweickert Team 2
 #
