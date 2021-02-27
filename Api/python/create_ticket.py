@@ -21,6 +21,7 @@
 import requests
 import json
 import sys
+from pprint import pprint # DEBUG
 
 ITOP_URL        = "https://team2-hackdays.itomig.de"
 ITOP_USER       = 'admin-team2'
@@ -55,6 +56,10 @@ encoded_data = json.dumps(json_data)
 r = requests.post(ITOP_URL+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': ITOP_USER , 'auth_pwd': ITOP_PWD , 'json_data': encoded_data})
 result = json.loads(r.text);
 if result['code'] == 0:
+        #print( "message = '%(m)s'\n" % { 'm' : result.text } )
+        #pprint( result )
+        pprint( result['objects'] )
         print( "Ticket created.\n" )
+        #print( "Ticket created - %(id)s.\n" % { 'id' : result['id'] } )
 else:
         print( result['message']+"\n" )
