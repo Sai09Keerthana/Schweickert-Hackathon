@@ -10,6 +10,7 @@
     "body-scroll-lock": "^3.1.5",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
+    "react-device-emulator": "^1.0.5",
     "react-dom": "^17.0.1",
     "react-mp3-recorder": "^1.1.2",
     "react-player": "^2.9.0",

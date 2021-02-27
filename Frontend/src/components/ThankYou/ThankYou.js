@@ -1,12 +1,8 @@
 import React from "react";
+import AvatarVideo from "../AvatarVideo/AvatarVideo";
 
-const ThankYou = () => {
-  return (
-    <div>
-      <h1>Thank You!</h1>
-      <p>Body</p>
-    </div>
-  );
+const ThankYou = ({ onEnded }) => {
+  return <AvatarVideo src="https://youtu.be/ae6_O-xruAI" onEnded={onEnded} />;
 };
 
 export default ThankYou;
