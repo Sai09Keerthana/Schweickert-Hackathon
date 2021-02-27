@@ -30,3 +30,4 @@ user_firstname = "claude"
 urgency = helpers.URGENCY_HIGH
 
 helpers.create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, user_firstname, user_lastname, organization, urgency, "something wrong", "please help from Python" )
+helpers.create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, "frida", "kahlo", organization, helpers.URGENCY_LOW, "something wrong", "please help from Python" )
