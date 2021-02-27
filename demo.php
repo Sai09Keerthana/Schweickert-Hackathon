@@ -27,4 +27,7 @@ $url        = "https://team2-hackdays.itomig.de/webservices/rest.php?version=1.3
 $login      = 'admin-team2';
 $password   = 'fie5aBo9oe4eij1faexu';
 
-create_ticket( $url, $login, $password, "claude", "monet", "Demo", "Cannot submit ticket", "Dear Support, can you please help? I cannot submit a ticket" );
+create_ticket( $url, $login, $password, "claude", "monet", "Demo", 1, "C: Cannot submit ticket", "Dear Support, can you please help? I cannot submit a ticket" );
+create_ticket( $url, $login, $password, "claude", "monet", "Demo", 2, "H: Cannot submit ticket", "Dear Support, can you please help? I cannot submit a ticket" );
+create_ticket( $url, $login, $password, "claude", "monet", "Demo", 3, "M: Cannot submit ticket", "Dear Support, can you please help? I cannot submit a ticket" );
+create_ticket( $url, $login, $password, "claude", "monet", "Demo", 4, "L: Cannot submit ticket", "Dear Support, can you please help? I cannot submit a ticket" );

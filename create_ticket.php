@@ -23,7 +23,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 require_once 'DoPostRequest.php';
 
-function create_ticket( $url, $login, $password, $user_firstname, $user_lastname, $organization, $subject, $body )
+function create_ticket( $url, $login, $password, $user_firstname, $user_lastname, $organization, $urgency, $subject, $body )
 {
     $aData = array();
     $aData['auth_user'] = $login;
@@ -39,6 +39,7 @@ function create_ticket( $url, $login, $password, $user_firstname, $user_lastname
             'org_id' => "SELECT Organization WHERE name = '$organization'",
             'caller_id'     => array('name' => "$user_lastname", 'first_name' => "$user_firstname"),
             'title'         => "$subject",
+            'urgency'       => $urgency,
             'description'   => "$body"
         ),
     );
