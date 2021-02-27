@@ -44,8 +44,11 @@ const Routes = () => {
           <NextButton to={"/thank-you"} label={"Next"} />
         </Route>
         <Route path="/thank-you">
-          <ThankYou />
-          <NextButton to={"/my-tickets"} label={"Next"} />
+          <ThankYou
+            onEnded={() => {
+              history.push("/my-tickets");
+            }}
+          />
         </Route>
         <Route path="/my-tickets">
           <MyTickets />
