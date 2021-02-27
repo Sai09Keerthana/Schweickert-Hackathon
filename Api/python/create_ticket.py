@@ -42,10 +42,10 @@ json_data = {
                 'title': TITLE,
                 'description': DESCRIPTION,
                 'org_id': 'SELECT Organization WHERE name = "%(organization)s"' % { 'organization': organization },
-#                'caller_id' : [ {
-#                    'name' : user_lastname,
-#                    'first_name' : user_firstname,
-#                }],
+                'caller_id' : {
+                    'name' : user_lastname,
+                    'first_name' : user_firstname,
+                },
                 'urgency': urgency,
         },
         'comment': COMMENT,
