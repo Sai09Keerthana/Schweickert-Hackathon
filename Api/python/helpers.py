@@ -26,6 +26,11 @@ import sys
 TICKET_CLASS    = 'UserRequest'
 COMMENT         = 'Created from Python'
 
+URGENCY_CRITICAL = 1
+URGENCY_HIGH     = 2
+URGENCY_MEDIUM   = 3
+URGENCY_LOW      = 4
+
 def create_ticket( url, login, password, user_firstname, user_lastname, organization, urgency, subject, body ):
 
     json_data = {

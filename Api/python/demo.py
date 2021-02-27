@@ -27,6 +27,6 @@ ITOP_PWD        = 'fie5aBo9oe4eij1faexu'
 organization = "Demo"
 user_lastname = "monet"
 user_firstname = "claude"
-urgency = 1
+urgency = helpers.URGENCY_HIGH
 
 helpers.create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, user_firstname, user_lastname, organization, urgency, "something wrong", "please help from Python" )
