@@ -21,7 +21,7 @@
 import requests
 import json
 import sys
-from pprint import pprint # DEBUG
+#from pprint import pprint # DEBUG
 
 ITOP_URL        = "https://team2-hackdays.itomig.de"
 ITOP_USER       = 'admin-team2'
@@ -50,21 +50,20 @@ json_data = {
                 'urgency': urgency,
         },
         'comment': COMMENT,
-        'output_fields': 'id',
+        'output_fields': 'id, friendlyname',
 }
 encoded_data = json.dumps(json_data)
 r = requests.post(ITOP_URL+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': ITOP_USER , 'auth_pwd': ITOP_PWD , 'json_data': encoded_data})
 result = json.loads(r.text);
 if result['code'] == 0:
-        #print( "message = '%(m)s'\n" % { 'm' : result.text } )
-        #pprint( result )
-        pprint( result['objects'] )
+        # pprint( result['objects'] ) # DEBUG
         objects = result['objects']
         first_key = next(iter( objects ))  # outputs 'foo'
         res = objects[ first_key ]
-        pprint( res )
-        tick_id = res['key']
-        print( "Ticket created - ticket id %(id)s.\n" % { 'id' : tick_id } )
-        #print( "Ticket created - %(id)s.\n" % { 'id' : result['id'] } )
+        # pprint( res ) # DEBUG
+        fields = res['fields']
+        tick_id = fields['id']
+        tick_friendly_id = fields['friendlyname']
+        print( "Ticket created - %(friendly)s (%(id)s).\n" % { 'id' : tick_id, 'friendly' : tick_friendly_id  } )
 else:
         print( result['message']+"\n" )
