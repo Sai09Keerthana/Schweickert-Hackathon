@@ -353,7 +353,7 @@ if (false)
 }
 else
 {
-    $sUrl = "https://localhost/itop/webservices/rest.php?version=1.3";
+    $sUrl = "https://team2-hackdays.itomig.de/webservices/rest.php?version=1.3";
 }
 
 $aData = array();
