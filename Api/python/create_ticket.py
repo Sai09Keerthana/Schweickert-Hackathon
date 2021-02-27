@@ -59,8 +59,12 @@ if result['code'] == 0:
         #print( "message = '%(m)s'\n" % { 'm' : result.text } )
         #pprint( result )
         pprint( result['objects'] )
-        print( next(iter( result['objects'])) ) # outputs 'foo'
-        print( "Ticket created.\n" )
+        objects = result['objects']
+        first_key = next(iter( objects ))  # outputs 'foo'
+        res = objects[ first_key ]
+        pprint( res )
+        tick_id = res['key']
+        print( "Ticket created - ticket id %(id)s.\n" % { 'id' : tick_id } )
         #print( "Ticket created - %(id)s.\n" % { 'id' : result['id'] } )
 else:
         print( result['message']+"\n" )
