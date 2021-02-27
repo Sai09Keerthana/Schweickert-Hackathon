@@ -23,9 +23,6 @@ import json
 import sys
 #from pprint import pprint # DEBUG
 
-ITOP_URL        = "https://team2-hackdays.itomig.de"
-ITOP_USER       = 'admin-team2'
-ITOP_PWD        = 'fie5aBo9oe4eij1faexu'
 TICKET_CLASS    = 'UserRequest'
 COMMENT         = 'Created from Python'
 
@@ -48,7 +45,7 @@ def create_ticket( url, login, password, user_firstname, user_lastname, organiza
         'output_fields': 'id, friendlyname',
 }
     encoded_data = json.dumps(json_data)
-    r = requests.post(ITOP_URL+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': ITOP_USER , 'auth_pwd': ITOP_PWD , 'json_data': encoded_data})
+    r = requests.post(url+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': login , 'auth_pwd': password , 'json_data': encoded_data})
     result = json.loads(r.text);
 
     if result['code'] == 0:
@@ -63,10 +60,3 @@ def create_ticket( url, login, password, user_firstname, user_lastname, organiza
         print( "Ticket created - %(friendly)s (%(id)s).\n" % { 'id' : tick_id, 'friendly' : tick_friendly_id  } )
     else:
         print( result['message']+"\n" )
-
-organization = "Demo"
-user_lastname = "monet"
-user_firstname = "claude"
-urgency = 1
-
-create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, user_firstname, user_lastname, organization, urgency, "something wrong", "please help from Python" )
