@@ -25,4 +25,4 @@ ITOP_USER       = 'admin-team2'
 ITOP_PWD        = 'fie5aBo9oe4eij1faexu'
 
 def create_ticket( user_firstname, user_lastname, organization, urgency, subject, body ):
-    helpers.create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, user_firstname, user_lastname, organization, urgency, subject, body )
+    return helpers.create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, user_firstname, user_lastname, organization, urgency, subject, body )

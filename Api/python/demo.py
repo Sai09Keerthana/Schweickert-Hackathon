@@ -26,5 +26,11 @@ user_lastname = "monet"
 user_firstname = "claude"
 urgency = helpers.URGENCY_HIGH
 
-helpers_schw.create_ticket( user_firstname, user_lastname, organization, urgency, "something wrong", "please help from Python" )
-helpers_schw.create_ticket( "frida", "kahlo", organization, helpers.URGENCY_LOW, "something wrong", "please help from Python" )
+res = helpers_schw.create_ticket( user_firstname, user_lastname, organization, urgency, "something wrong", "please help from Python" )
+
+if res['code'] == 0:
+    print( "OK: ticket created - {} ({})\n".format( res['ticket_nr'], res['id'] ) )
+else:
+    print( "ERROR: {}".format( res['message'] ) )
+
+#helpers_schw.create_ticket( "frida", "kahlo", organization, helpers.URGENCY_LOW, "something wrong", "please help from Python" )

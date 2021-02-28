@@ -53,15 +53,22 @@ def create_ticket( url, login, password, user_firstname, user_lastname, organiza
     r = requests.post(url+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': login , 'auth_pwd': password , 'json_data': encoded_data})
     result = json.loads(r.text);
 
+    res = dict()
+    res['code'] = result['code']
+
     if result['code'] == 0:
         # pprint( result['objects'] ) # DEBUG
         objects = result['objects']
         first_key = next(iter( objects ))  # outputs 'foo'
-        res = objects[ first_key ]
+        res_f = objects[ first_key ]
         # pprint( res ) # DEBUG
-        fields = res['fields']
+        fields = res_f['fields']
         tick_id = fields['id']
         tick_friendly_id = fields['friendlyname']
-        print( "Ticket created - %(friendly)s (%(id)s).\n" % { 'id' : tick_id, 'friendly' : tick_friendly_id  } )
+
+        res['id'] = tick_id
+        res['ticket_nr'] = tick_friendly_id
     else:
-        print( result['message']+"\n" )
+        res['message'] = result['message']
+
+    return res
