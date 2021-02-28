@@ -53,12 +53,12 @@ const Routes = () => {
           <Transcription
             setTicketText={setTicketText}
             onModified={() => {
-              history.push("/ticket-preview");
+              history.push("/attach-file-intro");
             }}
           />
           {/* <NextButton to={"/attach-file-intro"} label={"Next"} /> */}
         </Route>
-        <Route path="/ticket-preview">
+        {/* <Route path="/ticket-preview">
           <TicketPreview
             setCreatedTicketId={setCreatedTicketId}
             setCreatedTicketNr={setCreatedTicketNr}
@@ -69,8 +69,7 @@ const Routes = () => {
             nextButtonLabel={"Submit Ticket"}
             to={"attach-file-intro"}
           />
-          {/* <NextButton to={"/attach-file-intro"} label={"Next"} /> */}
-        </Route>
+        </Route> */}
         <Route path="/attach-file-intro" exact={true}>
           <AttachFileIntro
             onEnded={() => {

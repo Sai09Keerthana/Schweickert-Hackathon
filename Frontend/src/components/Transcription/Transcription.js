@@ -1,5 +1,6 @@
 import { Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
+import { BiMailSend } from "react-icons/bi";
 
 const Transcription = ({ setTicketText, onModified }) => {
   const [textFromAwsTranscribe, setTextFromAwsTranscribe] = useState(
@@ -10,6 +11,7 @@ const Transcription = ({ setTicketText, onModified }) => {
     <div>
       <h1>Transcription</h1>
       <p>
+        Ticket Description:
         <TextField
           multiline={true}
           variant="outlined"
@@ -25,6 +27,7 @@ const Transcription = ({ setTicketText, onModified }) => {
           }}
           variant="outlined"
         >
+          <BiMailSend size={30} />
           Submit Ticket
         </Button>
       </p>

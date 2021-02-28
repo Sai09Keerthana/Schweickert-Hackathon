@@ -3,10 +3,10 @@ import React from "react";
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
 import green from "@material-ui/core/colors/green";
-import "react-device-emulator/lib/styles/style.css";
-
 import styles from "./LayoutBasic.module.scss";
 import HorizontalSpacing from "../HorizontalSpacing/HorizontalSpacing";
+
+import "react-device-emulator/lib/styles/style.css";
 
 let theme = createMuiTheme({
   palette: {
