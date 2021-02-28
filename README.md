@@ -9,7 +9,7 @@ For deployment we've taken the important pieces and upgraded it to AWS API Gatew
 
 ## Frontend DEMO
 
-Written in React.
+Written in Javascript React.
 
 [Open DEMO](http://codingyourlife-schweickert-eva-frontend.s3-website.eu-central-1.amazonaws.com)
 
