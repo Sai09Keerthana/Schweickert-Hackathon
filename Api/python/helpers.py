@@ -18,7 +18,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-import requests
+from botocore.vendored import requests
 import json
 import sys
 #from pprint import pprint # DEBUG
