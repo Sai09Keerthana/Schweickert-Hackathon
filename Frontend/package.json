@@ -15,6 +15,7 @@
     "react-device-detect": "^1.15.0",
     "react-device-emulator": "^1.0.5",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
     "react-mp3-recorder": "^1.1.2",
     "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",

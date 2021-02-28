@@ -10,6 +10,8 @@ import MyTickets from "../MyTickets/MyTickets";
 import NextButton from "../NextButton/NextButton";
 import { Route, Switch, useHistory } from "react-router-dom";
 import LayoutBasic from "../LayoutBasic/LayoutBasic";
+import AttachFileIntro from "../AttachFileIntro/AttachFileIntro";
+import AttachFileNow from "../AttachFileNow/AttachFileNow";
 
 const Routes = () => {
   const history = useHistory();
@@ -48,10 +50,21 @@ const Routes = () => {
           <Transcription
             setTicketText={setTicketText}
             onModified={() => {
-              history.push("/ticket-preview");
+              history.push("/attach-file-intro");
             }}
           />
-          {/* <NextButton to={"/ticket-preview"} label={"Next"} /> */}
+          {/* <NextButton to={"/attach-file-intro"} label={"Next"} /> */}
+        </Route>
+        <Route path="/attach-file-intro" exact={true}>
+          <AttachFileIntro
+            onEnded={() => {
+              history.push("/attach-file");
+            }}
+          />
+        </Route>
+        <Route path="/attach-file">
+          <AttachFileNow />
+          <NextButton to={"/ticket-preview"} label={"Next"} />
         </Route>
         <Route path="/ticket-preview">
           <TicketPreview
