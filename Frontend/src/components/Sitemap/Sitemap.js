@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Sitemap = () => {
   return (
     <div>
-      <h3>Sitemap</h3>
+      <h3>Sitemap Quickaccess (Debug)</h3>
       <ul>
         <li>
           <Link to="/login">Go to Login</Link>

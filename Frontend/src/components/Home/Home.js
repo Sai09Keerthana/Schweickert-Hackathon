@@ -6,13 +6,13 @@ import Sitemap from "../Sitemap/Sitemap";
 const Home = () => {
   return (
     <div>
-      <h1>Welcome! This is a Debug Screen for faster development.</h1>
+      <h1>Welcome!</h1>
 
       <Link to="/login">
-        <Button variant="outlined">START</Button>
+        <Button variant="outlined">START THE APP</Button>
       </Link>
 
-      <Sitemap />
+      {/* <Sitemap /> */}
     </div>
   );
 };
