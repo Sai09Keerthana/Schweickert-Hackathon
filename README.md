@@ -13,4 +13,4 @@ Written in React.
 
 ## App Prototype
 
-https://www.figma.com/proto/bDaO1juZBWSR9tYxi01DR4/EVA?scaling=scale-down&node-id=12%3A94
+https://www.figma.com/proto/bDaO1juZBWSR9tYxi01DR4/EVA?scaling=scale-down&node-id=2%3A2
