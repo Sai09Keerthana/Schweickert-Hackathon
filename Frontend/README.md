@@ -10,3 +10,7 @@ Generated via a Software called CrazyTalk. Hosted on YouTube.
 - Attach Files: https://youtu.be/tnbrG-XHVXA
 - Ticket Received: https://youtu.be/MTO1v6ZIcvo
 - Goodbye: https://youtu.be/ae6_O-xruAI
+
+## API Access
+
+URLs are in .env file (environment variables)

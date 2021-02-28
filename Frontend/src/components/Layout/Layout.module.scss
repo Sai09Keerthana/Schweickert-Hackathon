@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .frame {
   padding: 25px;
   overflow: hidden;
@@ -14,7 +18,23 @@
   min-width: 375px;
   min-height: 667px;
   margin: 0 auto;
+  margin-top: -667px;
   overflow: hidden;
   border: solid 1px;
   background-color: black;
+
+  &.insideOfPhone {
+    max-width: 335px;
+    max-height: 667px;
+    min-width: 335px;
+    min-height: 667px;
+  }
+}
+
+.phoneImg {
+  margin: 0 auto;
+  max-width: 375px;
+  max-height: 667px;
+  min-width: 375px;
+  min-height: 667px;
 }

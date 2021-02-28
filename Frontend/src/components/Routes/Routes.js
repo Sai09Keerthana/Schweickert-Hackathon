@@ -8,7 +8,7 @@ import ThankYou from "../ThankYou/ThankYou";
 import MyTickets from "../MyTickets/MyTickets";
 import NextButton from "../NextButton/NextButton";
 import { Route, Switch, useHistory } from "react-router-dom";
-import LayoutBasic from "../LayoutBasic/LayoutBasic";
+import LayoutPhoneSimulator from "../Layout/LayoutPhoneSimulator";
 import AttachFileIntro from "../AttachFileIntro/AttachFileIntro";
 import AttachFileNow from "../AttachFileNow/AttachFileNow";
 import TicketPreviewIntro from "../TicketPreviewIntro/TicketPreviewIntro";
@@ -30,7 +30,7 @@ const Routes = () => {
 
   return (
     <Switch>
-      <LayoutBasic>
+      <LayoutPhoneSimulator>
         <Route path="/" exact={true}>
           <Home />
         </Route>
@@ -114,7 +114,7 @@ const Routes = () => {
         <Route path="/sitemap">
           <Sitemap />
         </Route>
-      </LayoutBasic>
+      </LayoutPhoneSimulator>
     </Switch>
   );
 };
