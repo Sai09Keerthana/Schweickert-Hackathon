@@ -31,7 +31,7 @@ const AvatarVideo = ({ src, onEnded }) => {
           }}
           config={{
             youtube: {
-              playerVars: { showinfo: 1, autoplay: 1, showinfo: 0, start: 0.1 },
+              playerVars: { showinfo: 0, autoplay: 1, start: 0.1 },
             },
           }}
         />

@@ -3,7 +3,6 @@ import React from "react";
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
 import green from "@material-ui/core/colors/green";
-import DeviceEmulator from "react-device-emulator";
 import "react-device-emulator/lib/styles/style.css";
 
 import styles from "./LayoutBasic.module.scss";

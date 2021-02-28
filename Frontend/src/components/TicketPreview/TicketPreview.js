@@ -7,6 +7,9 @@ const TicketPreview = ({
   setCreatedTicketId,
   setCreatedTicketNr,
   ticketText,
+  firstname,
+  lastname,
+  organization,
 }) => {
   const history = useHistory();
 
@@ -15,12 +18,21 @@ const TicketPreview = ({
 
     let response;
 
+    const randomNumber = Math.floor(Math.random() * 10);
+
+    const shortenedTiketText = `(Rnd${randomNumber}) ${ticketText.substring(
+      0,
+      15
+    )}`;
+
     try {
       response = await post(submitTicketEndpointUrl, {
-        // firstname: "frontend_firstname",
-        // lastname: "frontend_lastname",
-        // organization: "frontend_organization",
-        // urgency: "low",
+        user_firstname: firstname,
+        user_lastname: lastname,
+        organization: organization,
+        ticket_body: ticketText,
+        ticket_subject: shortenedTiketText,
+        urgency: "low", //or high
       });
 
       const { ticket_nr, id, ticketOk, code } = response.data;

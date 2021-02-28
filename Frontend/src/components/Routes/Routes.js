@@ -17,6 +17,10 @@ const Routes = () => {
   const [createdTicketId, setCreatedTicketId] = useState("R-666");
   const [createdTicketNr, setCreatedTicketNr] = useState("6");
 
+  const [firstname, setFirstname] = useState("claude");
+  const [lastname, setLastname] = useState("monet");
+  const [organization, setOrganization] = useState("Demo");
+
   const [ticketText, setTicketText] = useState("My PC did not turn on.");
 
   return (
@@ -54,6 +58,9 @@ const Routes = () => {
             setCreatedTicketId={setCreatedTicketId}
             setCreatedTicketNr={setCreatedTicketNr}
             ticketText={ticketText}
+            firstname={firstname}
+            lastname={lastname}
+            organization={organization}
           />
           {/* <NextButton to={"/thank-you"} label={"Next"} /> */}
         </Route>
