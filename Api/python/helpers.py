@@ -50,7 +50,7 @@ def create_ticket( url, login, password, user_firstname, user_lastname, organiza
         'output_fields': 'id, friendlyname',
 }
     encoded_data = json.dumps(json_data)
-    r = requests.post(url+'/webservices/rest.php?version=1.3', verify=False, data={'auth_user': login , 'auth_pwd': password , 'json_data': encoded_data})
+    r = requests.post(url+'/webservices/rest.php?version=1.3', verify=True, data={'auth_user': login , 'auth_pwd': password , 'json_data': encoded_data})
     result = json.loads(r.text);
 
     res = dict()
