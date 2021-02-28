@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Create Ticket Demo.
+# Create Ticket Wrapper.
 #
 # Copyright (C) 2021 Hack Rhein-Neckar - Schweickert Team 2
 #
@@ -19,12 +19,10 @@
 
 
 import helpers
-import helpers_schw
 
-organization = "Demo"
-user_lastname = "monet"
-user_firstname = "claude"
-urgency = helpers.URGENCY_HIGH
+ITOP_URL        = "https://team2-hackdays.itomig.de"
+ITOP_USER       = 'admin-team2'
+ITOP_PWD        = 'fie5aBo9oe4eij1faexu'
 
-helpers_schw.create_ticket( user_firstname, user_lastname, organization, urgency, "something wrong", "please help from Python" )
-helpers_schw.create_ticket( "frida", "kahlo", organization, helpers.URGENCY_LOW, "something wrong", "please help from Python" )
+def create_ticket( user_firstname, user_lastname, organization, urgency, subject, body ):
+    helpers.create_ticket( ITOP_URL, ITOP_USER, ITOP_PWD, user_firstname, user_lastname, organization, urgency, subject, body )
