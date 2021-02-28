@@ -13,7 +13,7 @@ const Transcription = ({
   setCreatedTicketNr,
 }) => {
   const [textFromAwsTranscribe, setTextFromAwsTranscribe] = useState(
-    "My PC did not turn on!" //TODO: get from AWS transcribe
+    "My PC suddenly shut down!" //TODO: get from AWS transcribe
   );
 
   const submitTicket = async () => {

@@ -8,12 +8,12 @@ import styles from "./Home.module.scss";
 const Home = () => {
   return (
     <div>
-      <h1>Thanks downloading the App</h1>
+      <h1>Thanks for downloading the App</h1>
 
       <Link to="/login">
         <Button variant="outlined">
           <img src="/eva.png" className={styles.assistantImg} />
-          <VscDebugStart size={30} />
+          <VscDebugStart size={40} />
           Tell Eva about your problem
         </Button>
       </Link>

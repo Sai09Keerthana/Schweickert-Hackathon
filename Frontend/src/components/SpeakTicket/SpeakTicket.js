@@ -88,7 +88,7 @@ export default class SpeakTicket extends Component {
 
         <Button>
           <BsFillLockFill size={200} />
-          <span>
+          <span style={{ color: "green" }}>
             <small>
               Your data is safe with us! See the{" "}
               <a
@@ -107,8 +107,7 @@ export default class SpeakTicket extends Component {
                 GDPR/Data-Privacy
               </a>{" "}
               of Amazon AWS Cloud Provider. We promise to <u>not</u> share your
-              data with anyone except literally anyone because this is a
-              prototype. You can also read details about the voice data
+              data with anyone. You can also read details about the voice data
               processing of{" "}
               <a href="https://docs.aws.amazon.com/transcribe/latest/dg/data-protection.html">
                 AWS Transcribe
@@ -122,7 +121,7 @@ export default class SpeakTicket extends Component {
                 AWS Polly
               </a>
               . For reading out your text recording we use AWS Polly can be seen
-              here.
+              here. We currently do not store any cookies.
               {/* You can also checkout our summary
           written in easy words{" "}
           <a
