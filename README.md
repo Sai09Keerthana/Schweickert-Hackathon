@@ -21,6 +21,7 @@ NOTE: Optimized for desktop browser because record did not work on mobile. Johan
 Login to iTop:
 
 Login: customer-team2
+
 Password: fie5aBo9oe4eij1faexu
 
 ## Figma Screendesign Clickable Prototype (before demo but nicer layout)
