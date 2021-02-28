@@ -10,3 +10,7 @@ Python Flask API that talks to Schweikert's iTop OpenSource Support Ticketing Te
 ## Frontend
 
 Written in React.
+
+## App Prototype
+
+https://www.figma.com/proto/bDaO1juZBWSR9tYxi01DR4/EVA?scaling=scale-down&node-id=12%3A94
