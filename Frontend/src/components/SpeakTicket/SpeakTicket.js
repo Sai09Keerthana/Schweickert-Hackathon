@@ -76,9 +76,9 @@ export default class SpeakTicket extends Component {
           </div>
         </div>
         <MobileView>
-          <NextButton to={"/transcription"} label={"Next"} />
+          <NextButton to={this.props.to} label={"Next"} />
         </MobileView>
-        {url && <NextButton to={"/transcription"} label={"Next"} />}
+        {url && <NextButton to={this.props.to} label={"Next"} />}
       </div>
     );
   }

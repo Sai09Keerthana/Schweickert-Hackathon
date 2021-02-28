@@ -2,7 +2,7 @@ import { Button } from "@material-ui/core";
 import React from "react";
 import { GrAttachment } from "react-icons/gr";
 
-const AttachFileNow = () => {
+const AttachFileNow = ({ setHasFile }) => {
   const buildFileSelector = () => {
     const fileSelector = document.createElement("input");
     fileSelector.setAttribute("type", "file");
@@ -13,6 +13,7 @@ const AttachFileNow = () => {
 
   const handleClickBrowseFiles = () => {
     buildFileSelector().click();
+    setHasFile(true);
   };
 
   return (

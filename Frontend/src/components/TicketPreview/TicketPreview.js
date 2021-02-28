@@ -10,6 +10,8 @@ const TicketPreview = ({
   firstname,
   lastname,
   organization,
+  nextButtonLabel,
+  to,
 }) => {
   const history = useHistory();
 
@@ -50,7 +52,7 @@ const TicketPreview = ({
       alert("sorry could not contact the API :/");
     }
 
-    history.push("/thank-you");
+    history.push(to);
   };
 
   return (
@@ -58,7 +60,7 @@ const TicketPreview = ({
       <h1>Ticket Preview</h1>
       <p>{ticketText}</p>
       <Button variant="outlined" onClick={handleClickSubmit}>
-        Submit Ticket
+        {nextButtonLabel}
       </Button>
     </div>
   );

@@ -12,6 +12,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import LayoutBasic from "../LayoutBasic/LayoutBasic";
 import AttachFileIntro from "../AttachFileIntro/AttachFileIntro";
 import AttachFileNow from "../AttachFileNow/AttachFileNow";
+import TicketPreviewIntro from "../TicketPreviewIntro/TicketPreviewIntro";
 
 const Routes = () => {
   const history = useHistory();
@@ -24,6 +25,8 @@ const Routes = () => {
   const [organization, setOrganization] = useState("Demo");
 
   const [ticketText, setTicketText] = useState("My PC did not turn on.");
+
+  const [hasFile, setHasFile] = useState(false);
 
   return (
     <Switch>
@@ -43,15 +46,28 @@ const Routes = () => {
           />
         </Route>
         <Route path="/speak-ticket">
-          <SpeakTicket />
+          <SpeakTicket to={"/transcription"} />
           {/* <NextButton to={"/transcription"} label={"Next"} /> */}
         </Route>
         <Route path="/transcription">
           <Transcription
             setTicketText={setTicketText}
             onModified={() => {
-              history.push("/attach-file-intro");
+              history.push("/ticket-preview");
             }}
+          />
+          {/* <NextButton to={"/attach-file-intro"} label={"Next"} /> */}
+        </Route>
+        <Route path="/ticket-preview">
+          <TicketPreview
+            setCreatedTicketId={setCreatedTicketId}
+            setCreatedTicketNr={setCreatedTicketNr}
+            ticketText={ticketText}
+            firstname={firstname}
+            lastname={lastname}
+            organization={organization}
+            nextButtonLabel={"Submit Ticket"}
+            to={"attach-file-intro"}
           />
           {/* <NextButton to={"/attach-file-intro"} label={"Next"} /> */}
         </Route>
@@ -63,19 +79,18 @@ const Routes = () => {
           />
         </Route>
         <Route path="/attach-file">
-          <AttachFileNow />
-          <NextButton to={"/ticket-preview"} label={"Next"} />
-        </Route>
-        <Route path="/ticket-preview">
-          <TicketPreview
-            setCreatedTicketId={setCreatedTicketId}
-            setCreatedTicketNr={setCreatedTicketNr}
-            ticketText={ticketText}
-            firstname={firstname}
-            lastname={lastname}
-            organization={organization}
+          <AttachFileNow setHasFile={setHasFile} />
+          <NextButton
+            to={hasFile ? "/thank-you-with-file" : "/thank-you"}
+            label={"Next"}
           />
-          {/* <NextButton to={"/thank-you"} label={"Next"} /> */}
+        </Route>
+        <Route path="/thank-you-with-file" exact={true}>
+          <TicketPreviewIntro
+            onEnded={() => {
+              history.push("/my-tickets");
+            }}
+          />
         </Route>
         <Route path="/thank-you">
           <ThankYou
