@@ -1,15 +1,21 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
-import Sitemap from "../Sitemap/Sitemap";
+import { VscDebugStart } from "react-icons/vsc";
+
+import styles from "./Home.module.scss";
 
 const Home = () => {
   return (
     <div>
-      <h1>Welcome!</h1>
+      <h1>Thanks downloading the App</h1>
 
       <Link to="/login">
-        <Button variant="outlined">START THE APP</Button>
+        <Button variant="outlined">
+          <img src="/eva.png" className={styles.assistantImg} />
+          <VscDebugStart size={30} />
+          Tell Eva about your problem
+        </Button>
       </Link>
 
       {/* <Sitemap /> */}

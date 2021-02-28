@@ -4,7 +4,6 @@ import Home from "../Home/Home";
 import Intro from "../Intro/Intro";
 import SpeakTicket from "../SpeakTicket/SpeakTicket";
 import Transcription from "../Transcription/Transcription";
-import TicketPreview from "../TicketPreview/TicketPreview";
 import ThankYou from "../ThankYou/ThankYou";
 import MyTickets from "../MyTickets/MyTickets";
 import NextButton from "../NextButton/NextButton";
@@ -13,6 +12,7 @@ import LayoutBasic from "../LayoutBasic/LayoutBasic";
 import AttachFileIntro from "../AttachFileIntro/AttachFileIntro";
 import AttachFileNow from "../AttachFileNow/AttachFileNow";
 import TicketPreviewIntro from "../TicketPreviewIntro/TicketPreviewIntro";
+import Sitemap from "../Sitemap/Sitemap";
 
 const Routes = () => {
   const history = useHistory();
@@ -55,6 +55,11 @@ const Routes = () => {
             onModified={() => {
               history.push("/attach-file-intro");
             }}
+            firstname={firstname}
+            lastname={lastname}
+            organization={organization}
+            setCreatedTicketId={setCreatedTicketId}
+            setCreatedTicketNr={setCreatedTicketNr}
           />
           {/* <NextButton to={"/attach-file-intro"} label={"Next"} /> */}
         </Route>
@@ -104,6 +109,10 @@ const Routes = () => {
             createdTicketNr={createdTicketNr}
           />
           <NextButton to={"/"} label={"Exit"} />
+        </Route>
+
+        <Route path="/sitemap">
+          <Sitemap />
         </Route>
       </LayoutBasic>
     </Switch>
