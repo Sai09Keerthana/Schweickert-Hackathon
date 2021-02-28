@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import RecorderFork from "react-mp3-recorder";
+import Recorder from "react-mp3-recorder";
 import ReactAudioPlayer from "react-audio-player";
 
 import blobToBuffer from "blob-to-buffer";
@@ -28,7 +28,7 @@ export default class SpeakTicket extends Component {
           }}
         >
           <div>
-            <RecorderFork
+            <Recorder
               onRecordingComplete={this._onRecordingComplete}
               onRecordingError={this._onRecordingError}
               style={{
@@ -78,6 +78,7 @@ export default class SpeakTicket extends Component {
         <MobileView>
           <NextButton to={"/transcription"} label={"Next"} />
         </MobileView>
+        {url && <NextButton to={"/transcription"} label={"Next"} />}
       </div>
     );
   }
@@ -89,7 +90,7 @@ export default class SpeakTicket extends Component {
         return;
       }
 
-      console.log("recording", blob);
+      console.log("recording", blob); //TODO: upload to API as POST to /upload
 
       if (this.state.url) {
         window.URL.revokeObjectURL(this.state.url);

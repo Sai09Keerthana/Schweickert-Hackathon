@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
 import Intro from "../Intro/Intro";
@@ -13,6 +13,11 @@ import LayoutBasic from "../LayoutBasic/LayoutBasic";
 
 const Routes = () => {
   const history = useHistory();
+
+  const [createdTicketId, setCreatedTicketId] = useState("R-666");
+  const [createdTicketNr, setCreatedTicketNr] = useState("6");
+
+  const [ticketText, setTicketText] = useState("My PC did not turn on.");
 
   return (
     <Switch>
@@ -36,12 +41,21 @@ const Routes = () => {
           {/* <NextButton to={"/transcription"} label={"Next"} /> */}
         </Route>
         <Route path="/transcription">
-          <Transcription />
-          <NextButton to={"/ticket-preview"} label={"Next"} />
+          <Transcription
+            setTicketText={setTicketText}
+            onModified={() => {
+              history.push("/ticket-preview");
+            }}
+          />
+          {/* <NextButton to={"/ticket-preview"} label={"Next"} /> */}
         </Route>
         <Route path="/ticket-preview">
-          <TicketPreview />
-          <NextButton to={"/thank-you"} label={"Next"} />
+          <TicketPreview
+            setCreatedTicketId={setCreatedTicketId}
+            setCreatedTicketNr={setCreatedTicketNr}
+            ticketText={ticketText}
+          />
+          {/* <NextButton to={"/thank-you"} label={"Next"} /> */}
         </Route>
         <Route path="/thank-you">
           <ThankYou
@@ -51,7 +65,10 @@ const Routes = () => {
           />
         </Route>
         <Route path="/my-tickets">
-          <MyTickets />
+          <MyTickets
+            createdTicketId={createdTicketId}
+            createdTicketNr={createdTicketNr}
+          />
           <NextButton to={"/"} label={"Exit"} />
         </Route>
       </LayoutBasic>

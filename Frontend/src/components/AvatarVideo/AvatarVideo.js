@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { disableBodyScroll } from "body-scroll-lock";
+import React, { useState } from "react";
 
 import styles from "./AvatarVideo.module.scss";
 import ReactPlayer from "react-player";
 
 const AvatarVideo = ({ src, onEnded }) => {
   if (!src.includes("embed")) {
+    src = src.replace("www.youtu.be", "www.youtube-nocookie.com");
     src = src.replace("www.youtube.com", "www.youtube.com/embed");
   }
   src = src.replace("www.youtube.com", "www.youtube-nocookie.com");
@@ -16,11 +16,6 @@ const AvatarVideo = ({ src, onEnded }) => {
   const playVideo = () => {
     setPlayWasClicked(true);
   };
-
-  const targetElement = document.querySelector(
-    "#unscrollableVideounscrollableVideo"
-  );
-  disableBodyScroll(targetElement);
 
   return (
     <span className={styles.overallWrapper} id="unscrollableVideo">
