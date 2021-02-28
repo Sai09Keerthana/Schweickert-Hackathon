@@ -14,3 +14,9 @@ Generated via a Software called CrazyTalk. Hosted on YouTube.
 ## API Access
 
 URLs are in .env file (environment variables)
+
+## DEMO
+
+http://codingyourlife-schweickert-eva-frontend.s3-website.eu-central-1.amazonaws.com
+
+NOTE: Because this URL is http and not https the record button does not seem to work. It does as in the video.
