@@ -5,6 +5,7 @@ Schweickert-Hackathon repository
 ## Api
 
 Python Flask API that talks to Schweikert's iTop OpenSource Support Ticketing Testsystem. It can create a Ticket there.
+For deployment we've taken the important pieces and upgraded it to AWS API Gateway and AWS Lambda with python. That way it is highly scaleable and a cheap pay per use model.
 
 ## Frontend
 
